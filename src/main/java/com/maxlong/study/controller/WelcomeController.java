@@ -21,4 +21,10 @@ public class WelcomeController {
         logger.info("首页");
         return "index";
     }
+
+    @RequestMapping("/myext")
+    public String myext(){
+        logger.info("myext");
+        return "myext";
+    }
 }
