@@ -1,18 +1,9 @@
 package com.maxlong.study;
 
-import org.jasig.cas.client.validation.Cas20ProxyReceivingTicketValidationFilter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
-import org.springframework.context.annotation.Bean;
-
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
 
 /**
  * @author 作者 maxlong:
@@ -21,8 +12,6 @@ import javax.servlet.ServletException;
  */
 @SpringBootApplication
 public class ApplicationMain extends SpringBootServletInitializer {
-
-    public static final Logger logger = LoggerFactory.getLogger(ApplicationMain.class);
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
