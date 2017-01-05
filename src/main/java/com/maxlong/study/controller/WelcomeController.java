@@ -19,6 +19,12 @@ public class WelcomeController {
     @RequestMapping("/")
     public String index(){
         logger.info("首页");
+        return "forward:/main";
+    }
+
+    @RequestMapping("/main")
+    public String main(){
+        logger.info("首页");
         return "index";
     }
 

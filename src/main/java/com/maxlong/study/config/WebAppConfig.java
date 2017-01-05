@@ -45,7 +45,7 @@ public class WebAppConfig {
         return servletListenerRegistrationBean;
     }
 
-    @Bean
+    @Bean(name = "systemPropertiesHelper")
     public SystemPropertiesHelper systemPropertiesHelperBean() {
         SystemPropertiesHelper systemPropertiesHelper = new SystemPropertiesHelper();
         return systemPropertiesHelper;
@@ -62,7 +62,7 @@ public class WebAppConfig {
         return servletListenerRegistrationBean;
     }
 
-    @Bean
+    @Bean(name = "singleSignOutHttpSessionListener")
     public SingleSignOutHttpSessionListener singleSignOutHttpSessionListenerBean() {
         SingleSignOutHttpSessionListener singleSignOutHttpSessionListener = new SingleSignOutHttpSessionListener();
         return singleSignOutHttpSessionListener;
