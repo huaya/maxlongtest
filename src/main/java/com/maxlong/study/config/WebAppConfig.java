@@ -20,7 +20,7 @@ import java.util.EventListener;
  * @version 创建时间：2017/1/5 10:55
  *          类说明
  */
-@Configuration
+//@Configuration
 public class WebAppConfig {
 
     @Value("${uc.plat}")

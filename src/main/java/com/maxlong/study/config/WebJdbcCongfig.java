@@ -1,13 +1,15 @@
 package com.maxlong.study.config;
 
-import com.sand.abacus.jdbc.dao.tx.AbacusTransactionManager;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.sql2o.Sql2o;
+
+import java.util.Properties;
 
 /**
  * @author 作者 maxlong:
@@ -16,6 +18,8 @@ import org.sql2o.Sql2o;
  */
 @Configuration
 public class WebJdbcCongfig {
+
+    private static final Logger logger = LoggerFactory.getLogger(WebJdbcCongfig.class);
 
     @Value("${hikaricp.dataSourceClassName}")
     private String dataSourceClassName;
@@ -54,6 +58,11 @@ public class WebJdbcCongfig {
         hikariConfig.setMaximumPoolSize(maximumPoolSize);
         hikariConfig.setMinimumIdle(minimumIdle);
         hikariConfig.setDataSourceClassName(dataSourceClassName);
+        Properties dataSourceProperties = new Properties();
+        dataSourceProperties.setProperty("url",url);
+        dataSourceProperties.setProperty("user",username);
+        dataSourceProperties.setProperty("password",password);
+        hikariConfig.setDataSourceProperties(dataSourceProperties);
         return hikariConfig;
     }
 
@@ -63,25 +72,11 @@ public class WebJdbcCongfig {
         return hikariDataSource;
     }
 
-    @Bean(name="sql2o")
-    public Sql2o sql2oBean(){
-        Sql2o sql2o = new Sql2o(hikariDataSourceBean());
-        return  sql2o;
-    }
-
     @Bean(name="jdbcTemplate")
     public JdbcTemplate jdbcTemplateBean(){
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
         jdbcTemplate.setDataSource(hikariDataSourceBean());
         return jdbcTemplate;
     }
-
-    @Bean(name="transactionManager")
-    public AbacusTransactionManager abacusTransactionManagerBean(){
-        AbacusTransactionManager abacusTransactionManager = new AbacusTransactionManager();
-        abacusTransactionManager.setDataSource(hikariDataSourceBean());
-        return abacusTransactionManager;
-    }
-
 
 }
