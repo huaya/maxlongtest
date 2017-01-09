@@ -107,11 +107,16 @@
       <artifactId>ojdbc7</artifactId>
       <version>0.0.1</version>
     </dependency>
+      <dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+          <version>1.16.10</version>
+      </dependency>
   </dependencies>
 
   <properties>
     <warName>maxlongTest</warName>
-    <port>8081</port>
+    <port>8083</port>
   </properties>
 
   <build>
