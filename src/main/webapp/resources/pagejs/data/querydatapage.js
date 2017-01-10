@@ -9,7 +9,11 @@ $(function () {
                 processing: false,  //隐藏加载提示,自行处理
                 searching: false,
                 destroy: true,
-                ordering : false
+                ordering : false,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'excel', 'pdf'
+                ]
             }
         }
     }
@@ -27,7 +31,7 @@ $(function () {
         "url": ctx + "/data/getdata",
         data : params,
         success : function (data) {
-            table = $('#example').DataTable($.extend(true,{},CONSTANT.DATA_TABLES.DEFAULT_OPTION,data.data));
+            table = $('#datatable').DataTable($.extend(true,{},CONSTANT.DATA_TABLES.DEFAULT_OPTION,data));
         }
     } );
 
