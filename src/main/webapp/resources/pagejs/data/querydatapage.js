@@ -1,13 +1,40 @@
-var table;
 $(function () {
 
+    var table;
+
+    var CONSTANT = {
+        DATA_TABLES : {
+            DEFAULT_OPTION : {
+                autoWidth: false,   //禁用自动调整列宽
+                processing: false,  //隐藏加载提示,自行处理
+                searching: false,
+                destroy: true,
+                ordering : false
+            }
+        }
+    }
+
+
     $('#commit').click(function() {
-        table.ajax.reload();
-        //alert($("#editor1").val());
-        return true;
+        if (table) {
+            table.clear();
+            table.destroy();
+            $('#example').html("");;
+        }
+    var params = {};
+    params.sql = $("#editor1").val();
+    $.ajax( {
+        "url": ctx + "/data/getdata",
+        data : params,
+        success : function (data) {
+            table = $('#example').DataTable($.extend(true,{},CONSTANT.DATA_TABLES.DEFAULT_OPTION,data.data));
+        }
+    } );
+
+    return true;
     });
 
-    table = $("#datatable").DataTable({
+    table = $("#datatable1").DataTable({
         processing: false,	//隐藏加载提示,自行处理
         serverSide: true,	//启用服务器端分页
         searching: false,	//禁用原生搜索

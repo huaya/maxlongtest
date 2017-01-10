@@ -17,42 +17,39 @@
 </head>
 <body>
     <form>
-        <textarea id="editor1" name="editor1" rows="10" cols="80">
-            select * from ACC_BUSICTRL_INFO
-        </textarea>
+        <textarea id="editor1" name="editor1" rows=10 cols=220>select * from ACC_BUSICTRL_INFO</textarea>
 
         <button type="button" id="commit">提交</button>
     </form>
     <div>
         <table id="datatable" class="display responsive nowrap">
-            <thead>
-            <tr>
-                <th>busi_ctrl_code</th>
-                <th>busi_ctrl_name</th>
-                <th>busi_ctrl_desc</th>
-                <th>insti_code</th>
-                <th>product_code</th>
-                <th>insert_o</th>
-                <th>insert_time</th>
-                <th>update_o</th>
-                <th>update_time</th>
-            </tr>
-            </thead>
+            <%--<thead>--%>
+            <%--<tr>--%>
+                <%--<th>busi_ctrl_code</th>--%>
+                <%--<th>busi_ctrl_name</th>--%>
+                <%--<th>busi_ctrl_desc</th>--%>
+                <%--<th>insti_code</th>--%>
+                <%--<th>product_code</th>--%>
+                <%--<th>insert_o</th>--%>
+                <%--<th>insert_time</th>--%>
+                <%--<th>update_o</th>--%>
+                <%--<th>update_time</th>--%>
+            <%--</tr>--%>
+            <%--</thead>--%>
             <tbody></tbody>
-            <tfoot>
-            <tr>
-                <th>busi_ctrl_code</th>
-                <th>busi_ctrl_name</th>
-                <th>busi_ctrl_desc</th>
-                <th>insti_code</th>
-                <th>product_code</th>
-                <th>insert_o</th>
-                <th>insert_time</th>
-                <th>update_o</th>
-                <th>update_time</th>
-            </tr>
-            </tfoot>
-
+            <%--<tfoot>--%>
+            <%--<tr>--%>
+                <%--<th>busi_ctrl_code</th>--%>
+                <%--<th>busi_ctrl_name</th>--%>
+                <%--<th>busi_ctrl_desc</th>--%>
+                <%--<th>insti_code</th>--%>
+                <%--<th>product_code</th>--%>
+                <%--<th>insert_o</th>--%>
+                <%--<th>insert_time</th>--%>
+                <%--<th>update_o</th>--%>
+                <%--<th>update_time</th>--%>
+            <%--</tr>--%>
+            <%--</tfoot>--%>
         </table>
     </div>
 
