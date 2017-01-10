@@ -8,14 +8,19 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="${ctx}/resources/plugins/datatables/jquery.dataTables.css">
-    <link rel="stylesheet" href="${ctx}/resources/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css">
-    <link rel="stylesheet" href="${ctx}/resources/plugins/datatables/extensions/"
     <script type="text/javascript" src="${ctx}/resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
-    <script type="text/javascript" src="${ctx}/resources/plugins/datatables/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="${ctx}/resources/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="${ctx}/resources/plugins/datatables/extensions/Buttons/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="${ctx}/resources/plugins/datatables/extensions/Buttons/js/buttons.flash.min.js"></script>
+    <script type="text/javascript" src="${ctx}/resources/plugins/datatables/extensions/Buttons/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="${ctx}/resources/plugins/datatables/extensions/Buttons/js/buttons.print.min.js"></script>
+    <script type="text/javascript" src="${ctx}/resources/plugins/datatables/extensions/Buttons/js/buttons.colVis.min.js"></script>
     <script type="text/javascript" src="${ctx}/resources/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
     <script type="text/javascript" src="${ctx}/resources/pagejs/data/querydatapage.js"></script>
-    <link rel="stylesheet" href="${ctx}/resources/plugins/datatables/jquery.dataTables.css">
+
+    <link rel="stylesheet" href="${ctx}/resources/plugins/datatables/media/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="${ctx}/resources/plugins/datatables/extensions/Buttons/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="${ctx}/resources/plugins/datatables/extensions/Responsive/css/responsive.dataTables.min.css">
     <link rel="stylesheet" href="${ctx}/resources/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css">
 </head>
 <body>

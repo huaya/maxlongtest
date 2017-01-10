@@ -9,11 +9,11 @@ $(function () {
                 processing: false,  //隐藏加载提示,自行处理
                 searching: false,
                 destroy: true,
-                ordering : false,
-                dom: 'Bfrtip',
-                buttons: [
-                    'copy', 'excel', 'pdf'
-                ]
+                ordering : false//,
+                // dom: 'Bfrtip',
+                // buttons: [
+                //     'colvis'
+                // ]
             }
         }
     }
@@ -23,7 +23,7 @@ $(function () {
         if (table) {
             table.clear();
             table.destroy();
-            $('#example').html("");;
+            $('#datatable').html("");;
         }
     var params = {};
     params.sql = $("#editor1").val();
