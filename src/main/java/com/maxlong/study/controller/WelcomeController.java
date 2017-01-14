@@ -28,6 +28,12 @@ public class WelcomeController {
         return "index";
     }
 
+    @RequestMapping("/main1")
+    public String main1(){
+        logger.info("首页");
+        return "index1";
+    }
+
     @RequestMapping("/myext")
     public String myext(){
         logger.info("myext");
