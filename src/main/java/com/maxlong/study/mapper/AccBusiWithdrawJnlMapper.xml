@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.maxlong.study.dao.AccBusiWithdrawJnlMapper">
+  <resultMap id="BaseResultMap" type="model.AccBusiWithdrawJnl">
+    <id column="BUSI_SERIAL" jdbcType="CHAR" property="busiSerial" />
+    <result column="RECORD_ID" jdbcType="CHAR" property="recordId" />
+    <result column="TRAN_ATTRIBUTE" jdbcType="CHAR" property="tranAttribute" />
+    <result column="BUSI_KIND" jdbcType="CHAR" property="busiKind" />
+    <result column="BUSI_TYPE" jdbcType="CHAR" property="busiType" />
+    <result column="STAT" jdbcType="VARCHAR" property="stat" />
+    <result column="ORG_SERIAL" jdbcType="CHAR" property="orgSerial" />
+    <result column="REVERSE_FLAG" jdbcType="CHAR" property="reverseFlag" />
+    <result column="CANCEL_FLAG" jdbcType="CHAR" property="cancelFlag" />
+    <result column="CONTRACT_ID" jdbcType="VARCHAR" property="contractId" />
+    <result column="ORDER_ID" jdbcType="VARCHAR" property="orderId" />
+    <result column="ACC_BATCH" jdbcType="VARCHAR" property="accBatch" />
+    <result column="WD_BATCH" jdbcType="VARCHAR" property="wdBatch" />
+    <result column="WD_PRODUCT_CODE" jdbcType="CHAR" property="wdProductCode" />
+    <result column="WD_INSTICODE" jdbcType="VARCHAR" property="wdInsticode" />
+    <result column="WD_TRAN_USER_ID" jdbcType="VARCHAR" property="wdTranUserId" />
+    <result column="WD_TRAN_DATETIME" jdbcType="VARCHAR" property="wdTranDatetime" />
+    <result column="WD_TRAN_ACCOUNT_NO" jdbcType="VARCHAR" property="wdTranAccountNo" />
+    <result column="WD_TRAN_ID" jdbcType="VARCHAR" property="wdTranId" />
+    <result column="WD_TRAN_TYPE" jdbcType="CHAR" property="wdTranType" />
+    <result column="STL_TYPE" jdbcType="CHAR" property="stlType" />
+    <result column="WTDRW_MODE" jdbcType="CHAR" property="wtdrwMode" />
+    <result column="WD_TRAN_AMT" jdbcType="DECIMAL" property="wdTranAmt" />
+    <result column="WD_TRAN_FEE_AMT" jdbcType="DECIMAL" property="wdTranFeeAmt" />
+    <result column="WD_TRAN_CURRENCY" jdbcType="VARCHAR" property="wdTranCurrency" />
+    <result column="WD_TRAN_FEE_TYPE" jdbcType="CHAR" property="wdTranFeeType" />
+    <result column="WD_TRAN_APY_DATETIME" jdbcType="VARCHAR" property="wdTranApyDatetime" />
+    <result column="WD_TRAN_SIGNATURE" jdbcType="VARCHAR" property="wdTranSignature" />
+    <result column="PVD_RHG_ACCOUNT_NO" jdbcType="VARCHAR" property="pvdRhgAccountNo" />
+    <result column="PVD_RHG_BANK_NAME" jdbcType="VARCHAR" property="pvdRhgBankName" />
+    <result column="PVD_RHG_ACCOUNT_FLAG" jdbcType="CHAR" property="pvdRhgAccountFlag" />
+    <result column="PVD_RHG_ACCNAME" jdbcType="VARCHAR" property="pvdRhgAccname" />
+    <result column="PVD_RHG_CNAPS" jdbcType="VARCHAR" property="pvdRhgCnaps" />
+    <result column="WD_TRAN_CMP_DATETIME" jdbcType="VARCHAR" property="wdTranCmpDatetime" />
+    <result column="PAY_GROUP" jdbcType="VARCHAR" property="payGroup" />
+    <result column="PAY_PRIORITY" jdbcType="CHAR" property="payPriority" />
+    <result column="COMBINE_FLAG" jdbcType="CHAR" property="combineFlag" />
+    <result column="EPAY_ID" jdbcType="CHAR" property="epayId" />
+    <result column="ORG_EPAY_ID" jdbcType="CHAR" property="orgEpayId" />
+    <result column="INSERT_O" jdbcType="VARCHAR" property="insertO" />
+    <result column="INSERT_TIME" jdbcType="VARCHAR" property="insertTime" />
+    <result column="UPDATE_TIME" jdbcType="VARCHAR" property="updateTime" />
+    <result column="ADDITIONAL1" jdbcType="VARCHAR" property="additional1" />
+    <result column="ADDITIONAL2" jdbcType="VARCHAR" property="additional2" />
+    <result column="BATCH_DATE" jdbcType="VARCHAR" property="batchDate" />
+    <result column="PRX_INSTI" jdbcType="VARCHAR" property="prxInsti" />
+    <result column="PRX_PRODUCT" jdbcType="CHAR" property="prxProduct" />
+    <result column="WD_USER_NAME" jdbcType="VARCHAR" property="wdUserName" />
+    <result column="WD_USER_NAME2" jdbcType="VARCHAR" property="wdUserName2" />
+    <result column="WD_OTRAN_FEE_AMT" jdbcType="DECIMAL" property="wdOtranFeeAmt" />
+    <result column="PAY_ACCOUNT_NO" jdbcType="VARCHAR" property="payAccountNo" />
+    <result column="PAY_ACCNAME" jdbcType="VARCHAR" property="payAccname" />
+    <result column="PAY_BANK_NAME" jdbcType="VARCHAR" property="payBankName" />
+    <result column="PAY_CNAPS" jdbcType="VARCHAR" property="payCnaps" />
+    <result column="WD_ACC_SELECT" jdbcType="CHAR" property="wdAccSelect" />
+    <result column="WD_CHANNEL_SELECT" jdbcType="CHAR" property="wdChannelSelect" />
+    <result column="SOURCE_SERIAL" jdbcType="VARCHAR" property="sourceSerial" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    BUSI_SERIAL, RECORD_ID, TRAN_ATTRIBUTE, BUSI_KIND, BUSI_TYPE, STAT, ORG_SERIAL, REVERSE_FLAG, 
+    CANCEL_FLAG, CONTRACT_ID, ORDER_ID, ACC_BATCH, WD_BATCH, WD_PRODUCT_CODE, WD_INSTICODE, 
+    WD_TRAN_USER_ID, WD_TRAN_DATETIME, WD_TRAN_ACCOUNT_NO, WD_TRAN_ID, WD_TRAN_TYPE, 
+    STL_TYPE, WTDRW_MODE, WD_TRAN_AMT, WD_TRAN_FEE_AMT, WD_TRAN_CURRENCY, WD_TRAN_FEE_TYPE, 
+    WD_TRAN_APY_DATETIME, WD_TRAN_SIGNATURE, PVD_RHG_ACCOUNT_NO, PVD_RHG_BANK_NAME, PVD_RHG_ACCOUNT_FLAG, 
+    PVD_RHG_ACCNAME, PVD_RHG_CNAPS, WD_TRAN_CMP_DATETIME, PAY_GROUP, PAY_PRIORITY, COMBINE_FLAG, 
+    EPAY_ID, ORG_EPAY_ID, INSERT_O, INSERT_TIME, UPDATE_TIME, ADDITIONAL1, ADDITIONAL2, 
+    BATCH_DATE, PRX_INSTI, PRX_PRODUCT, WD_USER_NAME, WD_USER_NAME2, WD_OTRAN_FEE_AMT, 
+    PAY_ACCOUNT_NO, PAY_ACCNAME, PAY_BANK_NAME, PAY_CNAPS, WD_ACC_SELECT, WD_CHANNEL_SELECT, 
+    SOURCE_SERIAL
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ACC_BUSI_WITHDRAW_JNL
+    where BUSI_SERIAL = #{busiSerial,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from ACC_BUSI_WITHDRAW_JNL
+    where BUSI_SERIAL = #{busiSerial,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="model.AccBusiWithdrawJnl">
+    insert into ACC_BUSI_WITHDRAW_JNL (BUSI_SERIAL, RECORD_ID, TRAN_ATTRIBUTE, 
+      BUSI_KIND, BUSI_TYPE, STAT, 
+      ORG_SERIAL, REVERSE_FLAG, CANCEL_FLAG, 
+      CONTRACT_ID, ORDER_ID, ACC_BATCH, 
+      WD_BATCH, WD_PRODUCT_CODE, WD_INSTICODE, 
+      WD_TRAN_USER_ID, WD_TRAN_DATETIME, WD_TRAN_ACCOUNT_NO, 
+      WD_TRAN_ID, WD_TRAN_TYPE, STL_TYPE, 
+      WTDRW_MODE, WD_TRAN_AMT, WD_TRAN_FEE_AMT, 
+      WD_TRAN_CURRENCY, WD_TRAN_FEE_TYPE, WD_TRAN_APY_DATETIME, 
+      WD_TRAN_SIGNATURE, PVD_RHG_ACCOUNT_NO, PVD_RHG_BANK_NAME, 
+      PVD_RHG_ACCOUNT_FLAG, PVD_RHG_ACCNAME, PVD_RHG_CNAPS, 
+      WD_TRAN_CMP_DATETIME, PAY_GROUP, PAY_PRIORITY, 
+      COMBINE_FLAG, EPAY_ID, ORG_EPAY_ID, 
+      INSERT_O, INSERT_TIME, UPDATE_TIME, 
+      ADDITIONAL1, ADDITIONAL2, BATCH_DATE, 
+      PRX_INSTI, PRX_PRODUCT, WD_USER_NAME, 
+      WD_USER_NAME2, WD_OTRAN_FEE_AMT, PAY_ACCOUNT_NO, 
+      PAY_ACCNAME, PAY_BANK_NAME, PAY_CNAPS, 
+      WD_ACC_SELECT, WD_CHANNEL_SELECT, SOURCE_SERIAL
+      )
+    values (#{busiSerial,jdbcType=CHAR}, #{recordId,jdbcType=CHAR}, #{tranAttribute,jdbcType=CHAR}, 
+      #{busiKind,jdbcType=CHAR}, #{busiType,jdbcType=CHAR}, #{stat,jdbcType=VARCHAR}, 
+      #{orgSerial,jdbcType=CHAR}, #{reverseFlag,jdbcType=CHAR}, #{cancelFlag,jdbcType=CHAR}, 
+      #{contractId,jdbcType=VARCHAR}, #{orderId,jdbcType=VARCHAR}, #{accBatch,jdbcType=VARCHAR}, 
+      #{wdBatch,jdbcType=VARCHAR}, #{wdProductCode,jdbcType=CHAR}, #{wdInsticode,jdbcType=VARCHAR}, 
+      #{wdTranUserId,jdbcType=VARCHAR}, #{wdTranDatetime,jdbcType=VARCHAR}, #{wdTranAccountNo,jdbcType=VARCHAR}, 
+      #{wdTranId,jdbcType=VARCHAR}, #{wdTranType,jdbcType=CHAR}, #{stlType,jdbcType=CHAR}, 
+      #{wtdrwMode,jdbcType=CHAR}, #{wdTranAmt,jdbcType=DECIMAL}, #{wdTranFeeAmt,jdbcType=DECIMAL}, 
+      #{wdTranCurrency,jdbcType=VARCHAR}, #{wdTranFeeType,jdbcType=CHAR}, #{wdTranApyDatetime,jdbcType=VARCHAR}, 
+      #{wdTranSignature,jdbcType=VARCHAR}, #{pvdRhgAccountNo,jdbcType=VARCHAR}, #{pvdRhgBankName,jdbcType=VARCHAR}, 
+      #{pvdRhgAccountFlag,jdbcType=CHAR}, #{pvdRhgAccname,jdbcType=VARCHAR}, #{pvdRhgCnaps,jdbcType=VARCHAR}, 
+      #{wdTranCmpDatetime,jdbcType=VARCHAR}, #{payGroup,jdbcType=VARCHAR}, #{payPriority,jdbcType=CHAR}, 
+      #{combineFlag,jdbcType=CHAR}, #{epayId,jdbcType=CHAR}, #{orgEpayId,jdbcType=CHAR}, 
+      #{insertO,jdbcType=VARCHAR}, #{insertTime,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR}, 
+      #{additional1,jdbcType=VARCHAR}, #{additional2,jdbcType=VARCHAR}, #{batchDate,jdbcType=VARCHAR}, 
+      #{prxInsti,jdbcType=VARCHAR}, #{prxProduct,jdbcType=CHAR}, #{wdUserName,jdbcType=VARCHAR}, 
+      #{wdUserName2,jdbcType=VARCHAR}, #{wdOtranFeeAmt,jdbcType=DECIMAL}, #{payAccountNo,jdbcType=VARCHAR}, 
+      #{payAccname,jdbcType=VARCHAR}, #{payBankName,jdbcType=VARCHAR}, #{payCnaps,jdbcType=VARCHAR}, 
+      #{wdAccSelect,jdbcType=CHAR}, #{wdChannelSelect,jdbcType=CHAR}, #{sourceSerial,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="model.AccBusiWithdrawJnl">
+    insert into ACC_BUSI_WITHDRAW_JNL
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="busiSerial != null">
+        BUSI_SERIAL,
+      </if>
+      <if test="recordId != null">
+        RECORD_ID,
+      </if>
+      <if test="tranAttribute != null">
+        TRAN_ATTRIBUTE,
+      </if>
+      <if test="busiKind != null">
+        BUSI_KIND,
+      </if>
+      <if test="busiType != null">
+        BUSI_TYPE,
+      </if>
+      <if test="stat != null">
+        STAT,
+      </if>
+      <if test="orgSerial != null">
+        ORG_SERIAL,
+      </if>
+      <if test="reverseFlag != null">
+        REVERSE_FLAG,
+      </if>
+      <if test="cancelFlag != null">
+        CANCEL_FLAG,
+      </if>
+      <if test="contractId != null">
+        CONTRACT_ID,
+      </if>
+      <if test="orderId != null">
+        ORDER_ID,
+      </if>
+      <if test="accBatch != null">
+        ACC_BATCH,
+      </if>
+      <if test="wdBatch != null">
+        WD_BATCH,
+      </if>
+      <if test="wdProductCode != null">
+        WD_PRODUCT_CODE,
+      </if>
+      <if test="wdInsticode != null">
+        WD_INSTICODE,
+      </if>
+      <if test="wdTranUserId != null">
+        WD_TRAN_USER_ID,
+      </if>
+      <if test="wdTranDatetime != null">
+        WD_TRAN_DATETIME,
+      </if>
+      <if test="wdTranAccountNo != null">
+        WD_TRAN_ACCOUNT_NO,
+      </if>
+      <if test="wdTranId != null">
+        WD_TRAN_ID,
+      </if>
+      <if test="wdTranType != null">
+        WD_TRAN_TYPE,
+      </if>
+      <if test="stlType != null">
+        STL_TYPE,
+      </if>
+      <if test="wtdrwMode != null">
+        WTDRW_MODE,
+      </if>
+      <if test="wdTranAmt != null">
+        WD_TRAN_AMT,
+      </if>
+      <if test="wdTranFeeAmt != null">
+        WD_TRAN_FEE_AMT,
+      </if>
+      <if test="wdTranCurrency != null">
+        WD_TRAN_CURRENCY,
+      </if>
+      <if test="wdTranFeeType != null">
+        WD_TRAN_FEE_TYPE,
+      </if>
+      <if test="wdTranApyDatetime != null">
+        WD_TRAN_APY_DATETIME,
+      </if>
+      <if test="wdTranSignature != null">
+        WD_TRAN_SIGNATURE,
+      </if>
+      <if test="pvdRhgAccountNo != null">
+        PVD_RHG_ACCOUNT_NO,
+      </if>
+      <if test="pvdRhgBankName != null">
+        PVD_RHG_BANK_NAME,
+      </if>
+      <if test="pvdRhgAccountFlag != null">
+        PVD_RHG_ACCOUNT_FLAG,
+      </if>
+      <if test="pvdRhgAccname != null">
+        PVD_RHG_ACCNAME,
+      </if>
+      <if test="pvdRhgCnaps != null">
+        PVD_RHG_CNAPS,
+      </if>
+      <if test="wdTranCmpDatetime != null">
+        WD_TRAN_CMP_DATETIME,
+      </if>
+      <if test="payGroup != null">
+        PAY_GROUP,
+      </if>
+      <if test="payPriority != null">
+        PAY_PRIORITY,
+      </if>
+      <if test="combineFlag != null">
+        COMBINE_FLAG,
+      </if>
+      <if test="epayId != null">
+        EPAY_ID,
+      </if>
+      <if test="orgEpayId != null">
+        ORG_EPAY_ID,
+      </if>
+      <if test="insertO != null">
+        INSERT_O,
+      </if>
+      <if test="insertTime != null">
+        INSERT_TIME,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="additional1 != null">
+        ADDITIONAL1,
+      </if>
+      <if test="additional2 != null">
+        ADDITIONAL2,
+      </if>
+      <if test="batchDate != null">
+        BATCH_DATE,
+      </if>
+      <if test="prxInsti != null">
+        PRX_INSTI,
+      </if>
+      <if test="prxProduct != null">
+        PRX_PRODUCT,
+      </if>
+      <if test="wdUserName != null">
+        WD_USER_NAME,
+      </if>
+      <if test="wdUserName2 != null">
+        WD_USER_NAME2,
+      </if>
+      <if test="wdOtranFeeAmt != null">
+        WD_OTRAN_FEE_AMT,
+      </if>
+      <if test="payAccountNo != null">
+        PAY_ACCOUNT_NO,
+      </if>
+      <if test="payAccname != null">
+        PAY_ACCNAME,
+      </if>
+      <if test="payBankName != null">
+        PAY_BANK_NAME,
+      </if>
+      <if test="payCnaps != null">
+        PAY_CNAPS,
+      </if>
+      <if test="wdAccSelect != null">
+        WD_ACC_SELECT,
+      </if>
+      <if test="wdChannelSelect != null">
+        WD_CHANNEL_SELECT,
+      </if>
+      <if test="sourceSerial != null">
+        SOURCE_SERIAL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="busiSerial != null">
+        #{busiSerial,jdbcType=CHAR},
+      </if>
+      <if test="recordId != null">
+        #{recordId,jdbcType=CHAR},
+      </if>
+      <if test="tranAttribute != null">
+        #{tranAttribute,jdbcType=CHAR},
+      </if>
+      <if test="busiKind != null">
+        #{busiKind,jdbcType=CHAR},
+      </if>
+      <if test="busiType != null">
+        #{busiType,jdbcType=CHAR},
+      </if>
+      <if test="stat != null">
+        #{stat,jdbcType=VARCHAR},
+      </if>
+      <if test="orgSerial != null">
+        #{orgSerial,jdbcType=CHAR},
+      </if>
+      <if test="reverseFlag != null">
+        #{reverseFlag,jdbcType=CHAR},
+      </if>
+      <if test="cancelFlag != null">
+        #{cancelFlag,jdbcType=CHAR},
+      </if>
+      <if test="contractId != null">
+        #{contractId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="accBatch != null">
+        #{accBatch,jdbcType=VARCHAR},
+      </if>
+      <if test="wdBatch != null">
+        #{wdBatch,jdbcType=VARCHAR},
+      </if>
+      <if test="wdProductCode != null">
+        #{wdProductCode,jdbcType=CHAR},
+      </if>
+      <if test="wdInsticode != null">
+        #{wdInsticode,jdbcType=VARCHAR},
+      </if>
+      <if test="wdTranUserId != null">
+        #{wdTranUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="wdTranDatetime != null">
+        #{wdTranDatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="wdTranAccountNo != null">
+        #{wdTranAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="wdTranId != null">
+        #{wdTranId,jdbcType=VARCHAR},
+      </if>
+      <if test="wdTranType != null">
+        #{wdTranType,jdbcType=CHAR},
+      </if>
+      <if test="stlType != null">
+        #{stlType,jdbcType=CHAR},
+      </if>
+      <if test="wtdrwMode != null">
+        #{wtdrwMode,jdbcType=CHAR},
+      </if>
+      <if test="wdTranAmt != null">
+        #{wdTranAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="wdTranFeeAmt != null">
+        #{wdTranFeeAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="wdTranCurrency != null">
+        #{wdTranCurrency,jdbcType=VARCHAR},
+      </if>
+      <if test="wdTranFeeType != null">
+        #{wdTranFeeType,jdbcType=CHAR},
+      </if>
+      <if test="wdTranApyDatetime != null">
+        #{wdTranApyDatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="wdTranSignature != null">
+        #{wdTranSignature,jdbcType=VARCHAR},
+      </if>
+      <if test="pvdRhgAccountNo != null">
+        #{pvdRhgAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="pvdRhgBankName != null">
+        #{pvdRhgBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="pvdRhgAccountFlag != null">
+        #{pvdRhgAccountFlag,jdbcType=CHAR},
+      </if>
+      <if test="pvdRhgAccname != null">
+        #{pvdRhgAccname,jdbcType=VARCHAR},
+      </if>
+      <if test="pvdRhgCnaps != null">
+        #{pvdRhgCnaps,jdbcType=VARCHAR},
+      </if>
+      <if test="wdTranCmpDatetime != null">
+        #{wdTranCmpDatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="payGroup != null">
+        #{payGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="payPriority != null">
+        #{payPriority,jdbcType=CHAR},
+      </if>
+      <if test="combineFlag != null">
+        #{combineFlag,jdbcType=CHAR},
+      </if>
+      <if test="epayId != null">
+        #{epayId,jdbcType=CHAR},
+      </if>
+      <if test="orgEpayId != null">
+        #{orgEpayId,jdbcType=CHAR},
+      </if>
+      <if test="insertO != null">
+        #{insertO,jdbcType=VARCHAR},
+      </if>
+      <if test="insertTime != null">
+        #{insertTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="additional1 != null">
+        #{additional1,jdbcType=VARCHAR},
+      </if>
+      <if test="additional2 != null">
+        #{additional2,jdbcType=VARCHAR},
+      </if>
+      <if test="batchDate != null">
+        #{batchDate,jdbcType=VARCHAR},
+      </if>
+      <if test="prxInsti != null">
+        #{prxInsti,jdbcType=VARCHAR},
+      </if>
+      <if test="prxProduct != null">
+        #{prxProduct,jdbcType=CHAR},
+      </if>
+      <if test="wdUserName != null">
+        #{wdUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="wdUserName2 != null">
+        #{wdUserName2,jdbcType=VARCHAR},
+      </if>
+      <if test="wdOtranFeeAmt != null">
+        #{wdOtranFeeAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="payAccountNo != null">
+        #{payAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="payAccname != null">
+        #{payAccname,jdbcType=VARCHAR},
+      </if>
+      <if test="payBankName != null">
+        #{payBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="payCnaps != null">
+        #{payCnaps,jdbcType=VARCHAR},
+      </if>
+      <if test="wdAccSelect != null">
+        #{wdAccSelect,jdbcType=CHAR},
+      </if>
+      <if test="wdChannelSelect != null">
+        #{wdChannelSelect,jdbcType=CHAR},
+      </if>
+      <if test="sourceSerial != null">
+        #{sourceSerial,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="model.AccBusiWithdrawJnl">
+    update ACC_BUSI_WITHDRAW_JNL
+    <set>
+      <if test="recordId != null">
+        RECORD_ID = #{recordId,jdbcType=CHAR},
+      </if>
+      <if test="tranAttribute != null">
+        TRAN_ATTRIBUTE = #{tranAttribute,jdbcType=CHAR},
+      </if>
+      <if test="busiKind != null">
+        BUSI_KIND = #{busiKind,jdbcType=CHAR},
+      </if>
+      <if test="busiType != null">
+        BUSI_TYPE = #{busiType,jdbcType=CHAR},
+      </if>
+      <if test="stat != null">
+        STAT = #{stat,jdbcType=VARCHAR},
+      </if>
+      <if test="orgSerial != null">
+        ORG_SERIAL = #{orgSerial,jdbcType=CHAR},
+      </if>
+      <if test="reverseFlag != null">
+        REVERSE_FLAG = #{reverseFlag,jdbcType=CHAR},
+      </if>
+      <if test="cancelFlag != null">
+        CANCEL_FLAG = #{cancelFlag,jdbcType=CHAR},
+      </if>
+      <if test="contractId != null">
+        CONTRACT_ID = #{contractId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        ORDER_ID = #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="accBatch != null">
+        ACC_BATCH = #{accBatch,jdbcType=VARCHAR},
+      </if>
+      <if test="wdBatch != null">
+        WD_BATCH = #{wdBatch,jdbcType=VARCHAR},
+      </if>
+      <if test="wdProductCode != null">
+        WD_PRODUCT_CODE = #{wdProductCode,jdbcType=CHAR},
+      </if>
+      <if test="wdInsticode != null">
+        WD_INSTICODE = #{wdInsticode,jdbcType=VARCHAR},
+      </if>
+      <if test="wdTranUserId != null">
+        WD_TRAN_USER_ID = #{wdTranUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="wdTranDatetime != null">
+        WD_TRAN_DATETIME = #{wdTranDatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="wdTranAccountNo != null">
+        WD_TRAN_ACCOUNT_NO = #{wdTranAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="wdTranId != null">
+        WD_TRAN_ID = #{wdTranId,jdbcType=VARCHAR},
+      </if>
+      <if test="wdTranType != null">
+        WD_TRAN_TYPE = #{wdTranType,jdbcType=CHAR},
+      </if>
+      <if test="stlType != null">
+        STL_TYPE = #{stlType,jdbcType=CHAR},
+      </if>
+      <if test="wtdrwMode != null">
+        WTDRW_MODE = #{wtdrwMode,jdbcType=CHAR},
+      </if>
+      <if test="wdTranAmt != null">
+        WD_TRAN_AMT = #{wdTranAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="wdTranFeeAmt != null">
+        WD_TRAN_FEE_AMT = #{wdTranFeeAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="wdTranCurrency != null">
+        WD_TRAN_CURRENCY = #{wdTranCurrency,jdbcType=VARCHAR},
+      </if>
+      <if test="wdTranFeeType != null">
+        WD_TRAN_FEE_TYPE = #{wdTranFeeType,jdbcType=CHAR},
+      </if>
+      <if test="wdTranApyDatetime != null">
+        WD_TRAN_APY_DATETIME = #{wdTranApyDatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="wdTranSignature != null">
+        WD_TRAN_SIGNATURE = #{wdTranSignature,jdbcType=VARCHAR},
+      </if>
+      <if test="pvdRhgAccountNo != null">
+        PVD_RHG_ACCOUNT_NO = #{pvdRhgAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="pvdRhgBankName != null">
+        PVD_RHG_BANK_NAME = #{pvdRhgBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="pvdRhgAccountFlag != null">
+        PVD_RHG_ACCOUNT_FLAG = #{pvdRhgAccountFlag,jdbcType=CHAR},
+      </if>
+      <if test="pvdRhgAccname != null">
+        PVD_RHG_ACCNAME = #{pvdRhgAccname,jdbcType=VARCHAR},
+      </if>
+      <if test="pvdRhgCnaps != null">
+        PVD_RHG_CNAPS = #{pvdRhgCnaps,jdbcType=VARCHAR},
+      </if>
+      <if test="wdTranCmpDatetime != null">
+        WD_TRAN_CMP_DATETIME = #{wdTranCmpDatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="payGroup != null">
+        PAY_GROUP = #{payGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="payPriority != null">
+        PAY_PRIORITY = #{payPriority,jdbcType=CHAR},
+      </if>
+      <if test="combineFlag != null">
+        COMBINE_FLAG = #{combineFlag,jdbcType=CHAR},
+      </if>
+      <if test="epayId != null">
+        EPAY_ID = #{epayId,jdbcType=CHAR},
+      </if>
+      <if test="orgEpayId != null">
+        ORG_EPAY_ID = #{orgEpayId,jdbcType=CHAR},
+      </if>
+      <if test="insertO != null">
+        INSERT_O = #{insertO,jdbcType=VARCHAR},
+      </if>
+      <if test="insertTime != null">
+        INSERT_TIME = #{insertTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="additional1 != null">
+        ADDITIONAL1 = #{additional1,jdbcType=VARCHAR},
+      </if>
+      <if test="additional2 != null">
+        ADDITIONAL2 = #{additional2,jdbcType=VARCHAR},
+      </if>
+      <if test="batchDate != null">
+        BATCH_DATE = #{batchDate,jdbcType=VARCHAR},
+      </if>
+      <if test="prxInsti != null">
+        PRX_INSTI = #{prxInsti,jdbcType=VARCHAR},
+      </if>
+      <if test="prxProduct != null">
+        PRX_PRODUCT = #{prxProduct,jdbcType=CHAR},
+      </if>
+      <if test="wdUserName != null">
+        WD_USER_NAME = #{wdUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="wdUserName2 != null">
+        WD_USER_NAME2 = #{wdUserName2,jdbcType=VARCHAR},
+      </if>
+      <if test="wdOtranFeeAmt != null">
+        WD_OTRAN_FEE_AMT = #{wdOtranFeeAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="payAccountNo != null">
+        PAY_ACCOUNT_NO = #{payAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="payAccname != null">
+        PAY_ACCNAME = #{payAccname,jdbcType=VARCHAR},
+      </if>
+      <if test="payBankName != null">
+        PAY_BANK_NAME = #{payBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="payCnaps != null">
+        PAY_CNAPS = #{payCnaps,jdbcType=VARCHAR},
+      </if>
+      <if test="wdAccSelect != null">
+        WD_ACC_SELECT = #{wdAccSelect,jdbcType=CHAR},
+      </if>
+      <if test="wdChannelSelect != null">
+        WD_CHANNEL_SELECT = #{wdChannelSelect,jdbcType=CHAR},
+      </if>
+      <if test="sourceSerial != null">
+        SOURCE_SERIAL = #{sourceSerial,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where BUSI_SERIAL = #{busiSerial,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="model.AccBusiWithdrawJnl">
+    update ACC_BUSI_WITHDRAW_JNL
+    set RECORD_ID = #{recordId,jdbcType=CHAR},
+      TRAN_ATTRIBUTE = #{tranAttribute,jdbcType=CHAR},
+      BUSI_KIND = #{busiKind,jdbcType=CHAR},
+      BUSI_TYPE = #{busiType,jdbcType=CHAR},
+      STAT = #{stat,jdbcType=VARCHAR},
+      ORG_SERIAL = #{orgSerial,jdbcType=CHAR},
+      REVERSE_FLAG = #{reverseFlag,jdbcType=CHAR},
+      CANCEL_FLAG = #{cancelFlag,jdbcType=CHAR},
+      CONTRACT_ID = #{contractId,jdbcType=VARCHAR},
+      ORDER_ID = #{orderId,jdbcType=VARCHAR},
+      ACC_BATCH = #{accBatch,jdbcType=VARCHAR},
+      WD_BATCH = #{wdBatch,jdbcType=VARCHAR},
+      WD_PRODUCT_CODE = #{wdProductCode,jdbcType=CHAR},
+      WD_INSTICODE = #{wdInsticode,jdbcType=VARCHAR},
+      WD_TRAN_USER_ID = #{wdTranUserId,jdbcType=VARCHAR},
+      WD_TRAN_DATETIME = #{wdTranDatetime,jdbcType=VARCHAR},
+      WD_TRAN_ACCOUNT_NO = #{wdTranAccountNo,jdbcType=VARCHAR},
+      WD_TRAN_ID = #{wdTranId,jdbcType=VARCHAR},
+      WD_TRAN_TYPE = #{wdTranType,jdbcType=CHAR},
+      STL_TYPE = #{stlType,jdbcType=CHAR},
+      WTDRW_MODE = #{wtdrwMode,jdbcType=CHAR},
+      WD_TRAN_AMT = #{wdTranAmt,jdbcType=DECIMAL},
+      WD_TRAN_FEE_AMT = #{wdTranFeeAmt,jdbcType=DECIMAL},
+      WD_TRAN_CURRENCY = #{wdTranCurrency,jdbcType=VARCHAR},
+      WD_TRAN_FEE_TYPE = #{wdTranFeeType,jdbcType=CHAR},
+      WD_TRAN_APY_DATETIME = #{wdTranApyDatetime,jdbcType=VARCHAR},
+      WD_TRAN_SIGNATURE = #{wdTranSignature,jdbcType=VARCHAR},
+      PVD_RHG_ACCOUNT_NO = #{pvdRhgAccountNo,jdbcType=VARCHAR},
+      PVD_RHG_BANK_NAME = #{pvdRhgBankName,jdbcType=VARCHAR},
+      PVD_RHG_ACCOUNT_FLAG = #{pvdRhgAccountFlag,jdbcType=CHAR},
+      PVD_RHG_ACCNAME = #{pvdRhgAccname,jdbcType=VARCHAR},
+      PVD_RHG_CNAPS = #{pvdRhgCnaps,jdbcType=VARCHAR},
+      WD_TRAN_CMP_DATETIME = #{wdTranCmpDatetime,jdbcType=VARCHAR},
+      PAY_GROUP = #{payGroup,jdbcType=VARCHAR},
+      PAY_PRIORITY = #{payPriority,jdbcType=CHAR},
+      COMBINE_FLAG = #{combineFlag,jdbcType=CHAR},
+      EPAY_ID = #{epayId,jdbcType=CHAR},
+      ORG_EPAY_ID = #{orgEpayId,jdbcType=CHAR},
+      INSERT_O = #{insertO,jdbcType=VARCHAR},
+      INSERT_TIME = #{insertTime,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=VARCHAR},
+      ADDITIONAL1 = #{additional1,jdbcType=VARCHAR},
+      ADDITIONAL2 = #{additional2,jdbcType=VARCHAR},
+      BATCH_DATE = #{batchDate,jdbcType=VARCHAR},
+      PRX_INSTI = #{prxInsti,jdbcType=VARCHAR},
+      PRX_PRODUCT = #{prxProduct,jdbcType=CHAR},
+      WD_USER_NAME = #{wdUserName,jdbcType=VARCHAR},
+      WD_USER_NAME2 = #{wdUserName2,jdbcType=VARCHAR},
+      WD_OTRAN_FEE_AMT = #{wdOtranFeeAmt,jdbcType=DECIMAL},
+      PAY_ACCOUNT_NO = #{payAccountNo,jdbcType=VARCHAR},
+      PAY_ACCNAME = #{payAccname,jdbcType=VARCHAR},
+      PAY_BANK_NAME = #{payBankName,jdbcType=VARCHAR},
+      PAY_CNAPS = #{payCnaps,jdbcType=VARCHAR},
+      WD_ACC_SELECT = #{wdAccSelect,jdbcType=CHAR},
+      WD_CHANNEL_SELECT = #{wdChannelSelect,jdbcType=CHAR},
+      SOURCE_SERIAL = #{sourceSerial,jdbcType=VARCHAR}
+    where BUSI_SERIAL = #{busiSerial,jdbcType=CHAR}
+  </update>
+</mapper>

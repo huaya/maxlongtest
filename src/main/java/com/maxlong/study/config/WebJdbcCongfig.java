@@ -16,7 +16,7 @@ import java.util.Properties;
  * @version 创建时间：2017/1/6 16:30
  *          类说明
  */
-@Configuration
+//@Configuration
 public class WebJdbcCongfig {
 
     private static final Logger logger = LoggerFactory.getLogger(WebJdbcCongfig.class);
