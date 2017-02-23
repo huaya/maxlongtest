@@ -1,6 +1,11 @@
 package com.maxlong.study;
 
+import com.alibaba.fastjson.JSONObject;
 import org.junit.Test;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -51,5 +56,15 @@ public class AppTest {
         //关闭
         Thread.sleep(10000);
         pool.shutdown();
+    }
+
+    @Test
+    public void test_call(){
+        List<User> list = new ArrayList<>();
+        User user1 = new User("aaaa", BigDecimal.valueOf(2.55));
+        User user2 = new User("bbbb",BigDecimal.valueOf(35.65));
+        list.add(user1);
+        list.add(user2);
+        System.out.println(JSONObject.toJSONString(list));
     }
 }
