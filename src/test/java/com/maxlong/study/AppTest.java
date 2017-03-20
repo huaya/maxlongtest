@@ -3,9 +3,12 @@ package com.maxlong.study;
 import com.alibaba.fastjson.JSONObject;
 import org.junit.Test;
 
+import java.io.File;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -66,5 +69,17 @@ public class AppTest {
         list.add(user1);
         list.add(user2);
         System.out.println(JSONObject.toJSONString(list));
+    }
+
+    @Test
+    public void test_call2() throws IOException {
+
+        String path = "D:\\Program Files\\workspace-sand\\abacus\\abacus-service-pay-bootstrap\\src\\main\\resources\\";
+        Properties property = System.getProperties();
+        property.setProperty("user.dir", path);
+        System.out.println(System.getProperty("user.dir"));
+        File directory = new File("");//设定为当前文件夹
+        System.out.println(directory.getCanonicalPath());//获取标准的路径
+        System.out.println(directory.getAbsolutePath());//获取绝对路径
     }
 }
