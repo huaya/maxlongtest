@@ -3,7 +3,9 @@ package com.maxlong.study;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.File;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
@@ -41,12 +43,10 @@ public class ExtClasspathLoderTest {
     }
 
     public static void loadClasspath() {
-        String config = "D:\\Program Files\\workspace-sand\\abacus\\abacus-service-pay-bootstrap\\src\\main\\resources\\config";
-        String spring = "D:\\Program Files\\workspace-sand\\abacus\\abacus-service-pay-bootstrap\\src\\main\\resources\\META-INF\\spring";
+        String config = "D:\\Program Files\\workspace-sand\\abacus\\abacus-service-pay-bootstrap\\src\\main\\resources";
 
         List<String> resFiles = new ArrayList<>();
         resFiles.add(config);
-        resFiles.add(spring);
 
         for (String r : resFiles) {
             File file = new File(r);
@@ -64,10 +64,19 @@ public class ExtClasspathLoderTest {
         }
     }
 
-    public static void main(String[] args) {
-       ExtClasspathLoderTest.loadClasspath();
-       String springConfig = "classpath*:META-INF/spring/*.xml";
-       ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(springConfig.split("[,\\s]+"));
+    public static void main(String[] args) throws MalformedURLException, InvocationTargetException, IllegalAccessException {
+//       ExtClasspathLoderTest.loadClasspath();
+
+        File file1 = new File("D:\\Program Files\\workspace-sand\\abacus\\abacus-service-pay-bootstrap\\src\\main\\resources");
+        addURL.invoke(classloader, new Object[] { file1.toURI().toURL() });
+        File file3 = new File("D:\\Program Files\\workspace-sand\\abacus\\abacus-jdbc-dao\\src\\main\\resources");
+        addURL.invoke(classloader, new Object[] { file3.toURI().toURL() });
+        File file2 = new File("D:\\Program Files\\workspace-sand\\abacus\\abacus-service-pay-bootstrap\\src\\main\\resources\\config");
+        addURL.invoke(classloader, new Object[] { file2.toURI().toURL() });
+
+
+        String springConfig = "classpath*:META-INF/spring/*.xml";
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(springConfig.split("[,\\s]+"));
 
     }
 }
