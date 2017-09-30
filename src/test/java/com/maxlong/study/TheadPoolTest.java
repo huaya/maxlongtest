@@ -17,7 +17,7 @@ import java.util.concurrent.Executors;
  * @version 创建时间：2016/12/6 9:34
  *          类说明
  */
-public class AppTest {
+public class TheadPoolTest {
 
     @Test
     public void test_singlethread_call() throws InterruptedException {
