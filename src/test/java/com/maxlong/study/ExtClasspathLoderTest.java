@@ -75,7 +75,7 @@ public class ExtClasspathLoderTest {
         addURL.invoke(classloader, new Object[] { file2.toURI().toURL() });
 
 
-        String springConfig = "classpath*:META-INF/spring/*.xml";
+        String springConfig = "classpath*:META-INF/service/*.xml";
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(springConfig.split("[,\\s]+"));
 
     }
